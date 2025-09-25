@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadPngBtn = document.getElementById('downloadPng');
 
     let analysisChartInstance = null;
-    const API_BASE_URL = "http://localhost:8000";
+    const API_BASE_URL = "https://skinmate.onrender.com";
 
     // --- UI State Management ---
     function showLoadingState(isAnalyzing) {
@@ -280,4 +280,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
 });
