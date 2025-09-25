@@ -6,3 +6,5 @@ pytesseract==0.3.10
 langchain-google-genai # <--- ADD THIS LINE
 langchain==0.2.2
 gunicorn
+langchain-groq
+
