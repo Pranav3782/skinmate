@@ -3,5 +3,6 @@ uvicorn[standard]==0.30.1
 python-multipart==0.0.9
 Pillow==10.3.0
 pytesseract==0.3.10
-langchain-groq==0.1.7
+langchain-google-genai # <--- ADD THIS LINE
 langchain==0.2.2
+gunicorn
