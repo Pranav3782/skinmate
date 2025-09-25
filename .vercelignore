@@ -1,0 +1,19 @@
+# Vercel Ignore File
+
+# Ignore Python virtual environment
+venv/
+.venv/
+
+# Ignore local caches and settings
+.cache/
+__pycache__/
+.vscode/
+
+# Ignore large data files or models
+*.csv
+*.pkl
+models/
+
+# Ignore documentation and tests
+docs/
+tests/
