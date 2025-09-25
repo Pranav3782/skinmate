@@ -1,0 +1,263 @@
+/* --- Root Variables for the "SkinMate" Theme --- */
+:root {
+    --bg-color: #F7F9F9;
+    --card-bg-color: #FFFFFF;
+    --primary-color: #6A8A82; /* Sage Green */
+    --primary-hover-color: #597D75; /* Darker Sage */
+    --text-color: #666666;
+    --heading-color: #2c3e50;
+    --border-color: #EAEAEA;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* --- General Body & Layout Styling --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 3rem 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* ✨ CHANGED: Increased spacing between blocks */
+}
+
+/* --- Header --- */
+.app-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.app-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.app-title i {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.tagline {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* --- Card Styling --- */
+.card {
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    box-shadow: none;
+}
+
+/* --- Form Elements --- */
+.input-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--heading-color);
+}
+
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-weight: 400;
+    color: var(--heading-color);
+}
+
+.custom-file-upload i {
+    margin-right: 0.75rem;
+    color: var(--primary-color);
+}
+
+.custom-file-upload:hover {
+    background-color: #fafafa;
+    border-color: var(--primary-color);
+}
+
+.file-name-display {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.styled-select, .styled-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: #FDFDFD;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.styled-select:focus, .styled-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(106, 138, 130, 0.1);
+}
+
+.styled-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --- Buttons --- */
+/* ✨ CHANGED: Combined selector to style both buttons the same */
+.analyze-button,
+.toggle-details-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.analyze-button:hover,
+.toggle-details-button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+/* --- Results Section --- */
+.results-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.analysis-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+.spinner-container {
+    text-align: center;
+    padding: 2rem 0;
+}
+.spinner {
+    border-left-color: var(--primary-color);
+}
+
+/* --- Chart & Stats --- */
+.chart-container {
+    max-width: 180px;
+    margin: 0 auto 2rem auto;
+}
+
+.key-stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.stat .stat-count {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.detailed-analysis-content {
+    line-height: 1.8;
+}
+.detailed-analysis-content ul {
+     list-style-type: none; /*This line removes the bullet points */
+    padding-left: 0;       /* This line removes the default indentation */
+}
+
+/* --- Download Section --- */
+.download-section {
+    text-align: center;
+}
+.download-label {
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ✨ ADDED: New styling for Download buttons ✨ */
+.download-button {
+    padding: 0.75rem 1.25rem;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.download-button i {
+    margin-right: 0.5rem;
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 640px) {
+    body {
+        padding: 1.5rem 1rem;
+    }
+    .container {
+        gap: 1.5rem; /* Slightly reduce gap for smaller screens */
+    }
+    .app-title {
+        font-size: 1.8rem;
+    }
+    .card {
+        padding: 1.25rem;
+    }
+}
