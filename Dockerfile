@@ -1,20 +1,15 @@
-# Start with a lightweight official Python image
-FROM python:3.12-slim
+# Use the full Python image for better compatibility
+FROM python:3.12
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Update package lists and install Tesseract AND its key dependency
-# ADDED libgl1-mesa-glx TO FIX THE PATH ISSUE
-RUN apt-get update && apt-get install -y tesseract-ocr libgl1-mesa-glx
+# Update system packages and install Tesseract with the English language pack
+RUN apt-get update && apt-get install -y tesseract-ocr tesseract-ocr-eng
 
-# Copy your requirements file into the container
+# Copy and install Python packages
 COPY requirements.txt .
-
-# Install your Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your backend application code into the container
+# Copy the rest of the application code
 COPY . .
-
-# The CMD to run the app will be handled by Render's Start Command
