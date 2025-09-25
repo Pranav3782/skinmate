@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinMate: Skincare Product Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">
+                <i class="fa-solid fa-leaf"></i>
+                <span>SkinMate</span>
+            </h1>
+            <p class="tagline">Smart care for your skin.</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <label for="imageUpload" class="custom-file-upload">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <span>Upload Product Label Image</span>
+                </label>
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+                <p id="fileNameDisplay" class="file-name-display"></p>
+            </div>
+            <br>
+
+            <div class="card">
+                <label for="productType" class="input-label">Select Product Type:</label>
+                <select id="productType" class="styled-select">
+                    <option value="Moisturizer">Moisturizer</option>
+                    <option value="Shampoo">Shampoo</option>
+                    <option value="Sunscreen">Sunscreen</option>
+                    <option value="Face Wash">Face Wash</option>
+                </select>
+            </div>
+            <br>
+
+             <div class="card">
+                 <label for="extractedIngredients" class="input-label">Extracted Ingredients:</label>
+                 <textarea id="extractedIngredients" class="styled-textarea" rows="8" placeholder="Upload an image to automatically extract ingredients..."></textarea>
+            </div>
+            <br>
+
+            <button id="analyzeButton" class="analyze-button">
+                <span>Analyze Ingredients</span>
+            </button>
+<br>
+            <div id="resultsSection" class="results-section" style="display: none;">
+                <br>
+                <div class="card analysis-card">
+                    <h2 class="analysis-title">Ingredient Analysis</h2>
+                    <br>
+                    <div id="loadingSpinner" class="spinner-container">
+                        <div class="spinner"></div>
+                        <p>Analyzing...</p>
+                    </div>
+                    <div id="errorMessage" class="error-message" style="display: none;"></div>
+                    <br>
+
+                    <div id="analysisSummary" style="display: none;">
+                        <div class="chart-container">
+                            <canvas id="analysisChart"></canvas>
+                        </div>
+                        <div class="key-stats">
+                            <div class="stat beneficial">
+                                <span class="stat-count" id="goodCount">0</span>
+                                <span class="stat-label">Beneficial</span>
+                            </div>
+                            <div class="stat neutral">
+                                <span class="stat-count" id="neutralCount">0</span>
+                                <span class="stat-label">Neutral</span>
+                            </div>
+                            <div class="stat caution">
+                                <span class="stat-count" id="cautionCount">0</span>
+                                <span class="stat-label">Caution</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="toggleDetailsBtn" class="toggle-details-button" style="display: none;">Show Details</button>
+
+                    <div id="detailedAnalysis" class="detailed-analysis-content" style="display: none;">
+                        </div>
+                </div>
+
+                <div id="downloadSection" class="download-section" style="display: none;">
+                    <p class="download-label">Download Analysis Report:</p>
+                    <div class="download-buttons">
+                        <button id="downloadPdf" class="download-button">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </button>
+                        <button id="downloadPng" class="download-button">
+                            <i class="fas fa-image"></i> PNG
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html>
